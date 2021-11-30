@@ -1,0 +1,326 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\spanishdecimal{.}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage[margin=0.50in]{geometry}
+\usepackage[nottoc]{tocbibind}
+\setlength{\parindent}{0cm}
+\begin{document}
+
+\include{portada}
+\tableofcontents
+\newpage
+\section{Primer ejercicio}
+Un fabricante de automóviles se preocupa por
+una falla en el mecanismo de freno de un modelo específico. En raras ocasiones la falla puede causar una
+catástrofe al manejarlo a alta velocidad. La distribución
+del número de automóviles por año que experimentará
+la catástrofe es una variable aleatoria de Poisson con $\lambda$= 5. \par
+a) ¿Cuál es la probabilidad de que, a lo sumo, 3 automóviles
+por año de ese modelo específico sufran
+una catástrofe?\par
+b) ¿Cuál es la probabilidad de que más de un automóvil por año experimente una catástrofe?\cite{walpole}
+\subsection{Antecedentes}
+La función de densidad de probabilidad para $x$ es: 
+\begin{equation}
+    P\left( x \right) = \frac{{e^{ - \lambda } \lambda ^x }}{{x!}}
+\end{equation}
+\subsection{Procedimiento}
+a) Determinaremos la probabilidad de que al menos tres carros experimenten una catástrofe: 
+\begin{equation}
+    P(X \leq 3)=P(X=0)+P(X=1)+P(X=2)+P(X=3)
+\end{equation}
+\begin{equation}
+    =p(0;5)+p(1;5)+p(2;5)+p(3;5)
+\end{equation}
+\begin{equation}
+    =\frac{e^{-5}(5)^{0}}{0!}+\frac{e^{-5}(5)^{0}}{1!}+\frac{e^{-5}(5)^{0}}{2!}+\frac{e^{-5}(5)^{0}}{3!}
+\end{equation}
+\begin{equation}
+=0.006738+0.03369+0.084224+0.140374
+\end{equation}
+\begin{equation}
+\textbf{=0.2650}
+\end{equation}\newline
+b) Ya que no se puede calcular probabilidades $P(X\geq x)$, solamente $P(X\leq x)$ y asumiendo que la probabilidad total del evento es $1$ entonces:
+\begin{equation}
+    P(X>1)=1-P(X \leq 1)
+\end{equation}
+\begin{equation}
+    =1-P(X=0)-P(X=1)
+\end{equation}
+\begin{equation}
+    =1-p(0;5)+p(1;5)
+\end{equation}
+\begin{equation}
+    =1-\frac{e^{-5}(5)^{0}}{0!}-\frac{e^{-5}(5)^{1}}{1!}  
+\end{equation}
+\begin{equation}
+    =1-0.006738-0.03369
+\end{equation}
+\begin{equation}
+    \textbf{=0.9596}
+\end{equation}
+
+\section{Segundo ejercicio}
+Denote con p(y) la función de probabilidad asociada con una variable aleatoria de Poisson con media $\lambda$.
+a) Demuestre que la relación entre probabilidades sucesivas satisface la igualdad $\frac{p(y)}{p(y-1)}=\frac{\lambda}{y}$, \newline para $y$ =
+1, 2, . . .\newline
+b) ¿Para qué valores de $y$ es $p(y) > p(y - 1)$?\newline
+c) Observe que el resultado del inciso a implica que las probabilidades de Poisson aumentan por un tiempo cuando y aumenta y disminuyen de ahí en adelante. Demuestre que $p(y)$ es maximizada cuando $y =$ al máximo entero menor o igual que $\lambda$.\cite{weckerly}
+\subsection{Antecedentes}
+La función de densidad de probabilidad para $y$ es: 
+\begin{equation}
+    P\left( X=y \right) =p(y)= \frac{{e^{ - \lambda } \lambda ^y }}{{y!}}
+\end{equation}
+\subsection{Procedimientos}
+a) Sustituyendo $y$ con $y-1$:
+\begin{equation}
+    P\left( X=y-1 \right) =p(y-1)= \frac{{e^{ - \lambda } \lambda ^{y-1} }}{{(y-1)!}}
+\end{equation}
+La razón entre las ecuaciones (13) y (14) es:
+\begin{equation}
+    \frac{p(y)}{p(y-1)}=\frac{ \frac{{e^{ - \lambda } \lambda ^y }}{{y!}}}{\frac{{e^{ - \lambda } \lambda ^{y-1} }}{{(y-1)!}}}
+\end{equation}
+Simplificando la ecuación (15) se obtiene: 
+\begin{equation}
+    \frac{p(y)}{p(y-1)}=\frac{\frac{\lambda}{y}}{\frac{1}{1}}= {\bf \frac{\lambda}{y}}
+\end{equation}
+b) Se puede decir que $p(y)>p(y-1)$ sucede cuando:
+\begin{equation}
+\frac{p(y)}{p(y-1)}>0
+\end{equation}
+Usando la ecuación (16):
+\begin{equation}
+\frac{\lambda}{y}>0
+\end{equation}
+Al ser $y>0$, se obtiene:
+\begin{equation}
+\lambda>y
+\end{equation}
+Entonces los valores de $y$ menores que $\lambda$ satisfacen la desigualdad.\newline \newline
+c) Sabemos que $p(y)$ incrementa si $p(y) \geq p(y-1) $ y $p(y-1)<p(y)$, entonces la posición cuando el incremento pasa al decremento se cumple cuando:
+\begin{equation}
+\frac{p(y)}{p(y-1)} \geq 0 \; \; y \; \; \frac{p(y+1)}{p(y)}<0
+\end{equation}
+Usando la ecuación (16):
+\begin{equation}
+\frac{\lambda}{y} \geq 0 \; \; y \; \; \frac{\lambda}{y+1}<0
+\end{equation}
+Entonces se obtiene: 
+\begin{equation}
+y \leq \lambda \; \; y \; \; (y+1)>\lambda
+\end{equation}
+Entonces $y$ es el mayor entero menor o igual que $\lambda$.
+\newpage
+\section{Tercer ejercicio}
+Supóngase que se conoce que normalmente el 10\% de la producción en un proceso de producción está defectuosa. Un inspector de calidad extrae una muestra 
+de 50 piezas terminadas y las inspecciona. Este inspector desea saber cual es la 
+probabilidad de que en el lote de 50 hayan\\
+a) Exactamente tres (3) piezas con defectos. \\
+b) A lo más dos (2) piezas defectuosas. \\
+c) Más de tres (3) piezas con defectos. \cite{Marcos}
+\subsection{Antecedentes}
+La función de densidad de probabilidad es: \newline
+\begin{equation}
+    \ b(x;n,p)=(_{x}^{n}\textrm{})p^{x}(1-p)^{n-x}\
+\end{equation}
+
+\subsection{Procedimientos}
+En este caso el numero de muestra seria 50
+\begin{equation}
+    n=50
+\end{equation}
+Y la probabilidad de éxito
+\begin{equation}
+    p=0.10
+\end{equation}
+a) Por lo cual la formula en el inciso ``a'' quedaría así
+\begin{equation}
+    \ p(x=3)=b(3;50,0.10)=(_{0.10}^{50}\textrm{})p^{3}(1-0.10)^{50-0.10}\
+\end{equation}
+Por lo tanto 
+\begin{equation}
+     \ b(3;50,0.10)=0.1385651
+\end{equation}
+b) En el inciso ``b'' se esta pidiendo de forma acumulativa por lo cual
+\begin{equation}
+     \ p(x \leq 2)=b(x\leq 2;50,0.10)=p(0)+p(1)+p(2)
+\end{equation}
+\begin{equation}
+     p(0)= 0.005153775
+\end{equation}
+\begin{equation}
+    p(1)= 0.02863208 
+\end{equation}
+\begin{equation}
+     p(2)= 0.0779429
+\end{equation}
+Por lo tanto
+\begin{equation}
+    p(x \leq 2)= 0.005153775+0.02863208+0.0779429 
+\end{equation}
+\begin{equation}
+    p(x \leq 2)= 0.1117288
+\end{equation}
+c) En el inciso ``c'' al pedir x $\geq$ 3 se representa de la siguiente forma
+\begin{equation}
+     \ p(x>3)=b(x>3;50,0.10)=1-p(x \leq 3)
+\end{equation}
+Lo que es igual a
+\begin{equation}
+    \ p(x>3)=1-[p(0)+p(1)+p(2)+p(3)]
+\end{equation}
+Por lo tanto
+\begin{equation}
+     \ p(x>3)=1-[0.005153775+0.02863208+0.0779429+0.1385651] 
+\end{equation}
+\begin{equation}
+     \ p(x>3)=1-[0.2502939] 
+\end{equation}
+\begin{equation}
+     \ p(x>3)=0.7497061
+\end{equation}
+
+
+
+
+\newpage
+\section{Cuarto ejercicio}
+Un experto en la materia sabe que el precio de una determinada vivienda está comprendido entre 220 y 232 miles de euros; también sabe que el precio al cual será más probablemente vendida se encuentra en torno a los 224 miles de euros. Suponiendo que la variable aleatoria X, que representa el valor de mercado de la vivienda, tiene la función de densidad:
+\begin{equation}
+    f(x)=K(x-220)^p(232-x)^q
+\end{equation}
+se pide:
+\begin{itemize}
+    \item Encontrar los valores de \textit{p y q} tales que $p+q=3$.
+    \item Determinar el valor de \textit{K}.
+    \item Calcular el valor esperado de \textit{X}.\cite{ejercicios}
+\end{itemize}
+\subsection{Procedimiento}
+a)
+\begin{equation}
+    ln f(x)=ln\; K +p\; ln(x-220)+q\; ln(232-x)
+\end{equation}
+Derivando respecto a x e igualando a 0 se tiene:
+\begin{equation}
+    \frac{dlnf\;(x)}{dx}=\frac{p}{x-220}-\frac{q}{232-x}
+\end{equation}
+Por tanto,
+\begin{equation}
+    \frac{p}{x-220}-\frac{q}{232-x}=0\Leftrightarrow \frac{p}{4}-\frac{q}{8}=0\Leftrightarrow q=2p
+\end{equation}
+Si ahora se tiene en cuenta que $p+q=3$, podemos determinar los valores p y q resolviendo el sistema:
+\[ 
+\left \{
+  \begin{tabular}{ccc}
+  q=2p\\
+  p+q=3 
+  \end{tabular}
+\right \}
+\]
+Cuya solución es $p=1$ y $q=2$.\\
+b) Sustituidos p y q por sus valores calculados en el apartado a) se tiene que:
+\begin{equation}
+    \int\limits_{220}^{232} f(x)=K \int\limits_{220}^{232}(x-220)(232-x)^2\;dx=1 
+\end{equation}
+Por tanto:
+\begin{equation}
+    K=\frac{1}{ \int\limits_{220}^{232}(x-220)(232-x)^2\;dx}
+\end{equation}
+Por otra parte:
+\begin{equation}
+    (x-220)(232-x)^2=(x-220)(x^2-464x+53824)\\=x^3-684x^2+155944x-11841280
+\end{equation}
+
+
+Con lo cual:
+\begin{equation}
+    \int\limits_{220}^{232} (x-220)(232-x)^{2}dx=\int\limits_{220}^{232}(x^{3}-684x^{2}+155904x-11841280)dx 
+\end{equation}
+\begin{equation}
+    =\bigg( \frac{232^{4}}{4}-\frac{684\cdot232^{3}}{3}+\frac{155904\cdot232^{2}}{2}-11841280\cdot232 \bigg)
+\end{equation}
+\begin{equation}
+    -\bigg( \frac{220^{4}}{4}-\frac{684\cdot220^{3}}{3}+\frac{155904\cdot220^{2}}{2}-11841280\cdot220 \bigg)=1728
+\end{equation}
+Por tanto, $K=\frac{1}{1728}$\\
+c) $E(x)=$
+\begin{equation}
+    \frac{1}{1728}\int\limits_{220}^{232}x(x^{3}-684x^{2}+155904x-11841280)dx 
+\end{equation}
+\begin{equation}
+    =\frac{1}{1728}\bigg( \frac{232^{5}}{5}-\frac{684\cdot232^{4}}{4}+\frac{155904\cdot232^{3}}{3}-\frac{11841280\cdot232^{2}}{2} \bigg)
+\end{equation}
+\begin{equation}
+    -\frac{1}{1728}\bigg( \frac{220^{5}}{5}-\frac{684\cdot220^{4}}{4}+\frac{155904\cdot220^{3}}{3}-\frac{11841280\cdot220^{2}}{2} \bigg)=224.8
+\end{equation}
+
+
+\section{Quinto ejercicio}
+Verifique que $Var(x)=\frac{\alpha}{\lambda^{2}};$ Cuando $x$ es una variable aleatoria con distribución gamma con parámetros $\alpha$ y $\lambda$.\cite{ross}
+\subsection{Antecedentes}
+Función Gamma:
+\begin{equation}
+    \Gamma \left( \alpha \right) = \int\limits_0^\infty {x^{\alpha - 1} e^{-x} dx}
+\end{equation}
+Una propiedad de la función Gamma, cuando $\alpha>1$:
+\begin{equation}
+    \Gamma \left( \alpha \right) =(\alpha-1) \Gamma \left( \alpha -1\right)
+\end{equation}
+Función de densidad de probabilidad Gamma con parámetros $\alpha$ y $\lambda$ cuando $x \geq 0$, $0$ de lo contrario:
+\begin{equation}
+    f(x)=\frac{\lambda e^{-\lambda x}(\lambda x)^{\alpha-1}}{\Gamma(\alpha)}
+\end{equation}
+La media de una variable aleatoria con distribución Gamma es:
+\begin{equation}
+    E(X) = \frac{\alpha}{\lambda}
+\end{equation}
+\subsection{Procedimientos}
+La varianza se calcula con $E(X^{2})-E(X)^{2}$, como $E(X)$ ya es conocido, solo nos resta calcular $E(X^{2})$, la cual viene dada por:
+\begin{equation}
+    E(X^{2})=\int\limits_0^\infty {x^{2}f(x) dx}
+\end{equation}
+\begin{equation}
+     =\int\limits_0^\infty {x^{2}\frac{\lambda e^{-\lambda x}(\lambda x)^{\alpha-1}}{\Gamma(\alpha)} dx}
+\end{equation}
+\begin{equation}
+     =\frac{\lambda^{\alpha}}{\Gamma(\alpha)}\int\limits_0^\infty {x^{\alpha+1}e^{-\lambda x} dx}
+\end{equation}
+Para resolver la integral anterior se realiza la sustitución: $v=\lambda x$ y $dv=\lambda dx$
+\begin{equation}
+     =\frac{\lambda^{\alpha}}{\Gamma(\alpha)}\int\limits_0^\infty {\frac{v^{\alpha+1}}{\lambda^{\alpha+1}}e^{-v} \frac{dv}{\lambda}}
+\end{equation}
+\begin{equation}
+        =\frac{\lambda^{\alpha}}{\lambda^{\alpha+2} \Gamma(\alpha)}\int\limits_0^\infty {v^{\alpha+1}e^{-v}} dv
+\end{equation}
+Sustituyendo la integral por la función Gamma antes mencionada:
+\begin{equation}
+    =\frac{\Gamma(\alpha+2)}{\lambda^{2}\Gamma(\alpha)}
+\end{equation}
+Haciendo uso de la propiedad de la función Gamma mencionada en los antecedentes de este ejercicio:
+\begin{equation}
+    \Gamma(\alpha+2)=(\alpha+1)\Gamma(\alpha+1)=(\alpha+1)\alpha\Gamma(\alpha)
+\end{equation}
+Por lo tanto:
+\begin{equation}
+    E(X^{2})=\frac{(\alpha+1)\alpha}{\lambda^{2}}
+\end{equation}
+Tomando el valor de $E(X)$ dado en los antecedentes, se encuentra que:
+\begin{equation}
+    Var(X)=\frac{(\alpha+1)\alpha}{\lambda^{2}}-\frac{\alpha^{2}}{\lambda^{2}}
+\end{equation}
+\begin{equation}
+    =\frac{\alpha^{2}+\alpha}{\lambda^{2}}-\frac{\alpha^{2}}{\lambda^{2}}
+\end{equation}
+\begin{equation}
+    =\frac{\alpha}{\lambda^{2}}
+\end{equation}
+
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{ref}
+\end{document}
